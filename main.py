@@ -5,6 +5,9 @@ from typing import Optional
 
 app = FastAPI()
 
+my_posts = [{"title": "Post 1", "content": "This is my first post", "id": 1},
+            {"title": "Post 2", "content": "This is my second post", "id": 2}]
+
 class Post(BaseModel):
     title: str
     content: str
@@ -18,9 +21,11 @@ def root():
 
 @app.get("/posts")
 def get_posts():
-    return {"data": "blog list"}
+    return {"data": my_posts}
+
+
 #payload
-@app.post("/createposts")
+@app.post("/posts")
 def create_posts(post: Post):
     print(post)
     print(post.dict())
