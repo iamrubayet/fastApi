@@ -1,5 +1,5 @@
 1 hour 10 minutes.pydantic
 
-1 hour 14 minutes 
+1 hour 34 minutes (crud with array not db)
 
 uvicorn main:app --reload
