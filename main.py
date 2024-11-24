@@ -33,3 +33,9 @@ def create_posts(post: Post):
     my_posts.append(post_dict)
     return {"data": post_dict} 
 
+@app.get("/posts/{id}") #path parameter or url parameter
+def get_post(id):
+    print(id)
+    return {"post_detail": f"Post with id {id}"}
+
+
